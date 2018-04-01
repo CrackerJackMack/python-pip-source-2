@@ -1,2 +1,2 @@
-pika==0.10.1
+pika==0.10.0
 git+ssh://git@github.com/crackerjackmack/python-pip-source-3@master#egg=pipvoid

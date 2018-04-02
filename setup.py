@@ -1,9 +1,4 @@
-import uuid
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
-
-install_reqs = parse_requirements('requirements.txt', session=uuid.uuid1())
-reqs = [str(ir.req) for ir in install_reqs if ir.req]
 
 setup(
     name='libtestpip',
@@ -14,7 +9,12 @@ setup(
     author_email='crackerjackmack@gmail.com',
     description='bug testing',
     include_package_data=False,
-    install_requires=reqs,
+    install_requires=[
+        'pipvoid',
+    ],
+    dependency_links=[
+        'git+ssh://git@github.com/crackerjackmack/python-pip-source-3@master#egg=pipvoid-0',
+    ],
     entry_points='''
     '''
 )
